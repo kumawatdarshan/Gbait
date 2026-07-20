@@ -1,0 +1,28 @@
+[workspace.metadata.crane]
+name = "Gbait"
+version = "0.0.0"
+
+[workspace.package]
+version = "0.0.0"
+authors = ["Darshan Kumawat <mail@darshan.qzz.io>"]
+edition = "2024"
+categories = ["gba", "emulator", "rust"]
+repository = "https://github.com/kumawatdarshan/Gbait"
+
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[profile.dev]
+opt-level = 0
+codegen-units = 256
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = true
+panic = "abort"
+debug = false
+
+[workspace.dependencies]

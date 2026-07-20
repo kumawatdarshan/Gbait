@@ -1,0 +1,4 @@
+[[language]]
+name = "markdown"
+language-servers = ["markdown-oxide"]
+soft-wrap.enable = true

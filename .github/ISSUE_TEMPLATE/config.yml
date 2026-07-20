@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: GBA Resources
+    url: https://github.com/kumawatdarshan/Gbait/blob/main/RESOURCES.md
+    about: Architecture reference docs and prior art
+  - name: Progress Dashboard
+    url: https://github.com/kumawatdarshan/Gbait/blob/main/docs/PROGRESS.md
+    about: See current milestone and checkpoint status

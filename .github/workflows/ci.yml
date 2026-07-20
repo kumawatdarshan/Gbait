@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  checks:
+    name: Fmt and Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Formatting and linting
+        run: nix flake check
+
+  tests:
+    name: Test
+    continue-on-error: true
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Run tests
+        run: nix develop --command just test
